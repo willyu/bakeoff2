@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
     if (!finished) {
       line = (TextView) findViewById(R.id.stat_line1);
-      line.setText("Phrase" + (currTrialNum + 1) + " of " + totalTrialNum);
+      line.setText("Phrase " + (currTrialNum + 1) + " of " + totalTrialNum);
       line = (TextView) findViewById(R.id.stat_line2);
       line.setText("Target phrase: " + currTarget);
       line = (TextView) findViewById(R.id.stat_line3);
