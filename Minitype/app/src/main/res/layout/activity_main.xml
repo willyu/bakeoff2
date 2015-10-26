@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#000000"
+  android:paddingBottom="@dimen/activity_vertical_margin"
+  android:paddingLeft="@dimen/activity_horizontal_margin"
+  android:paddingRight="@dimen/activity_horizontal_margin"
+  android:paddingTop="@dimen/activity_vertical_margin"
+  tools:context=".MainActivity">
+
+  <TextView
+    android:id="@+id/target_text_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="128dp"
+    android:text="@string/init_target_text_view"
+    android:visibility="invisible"/>
+
+  <TextView
+    android:id="@+id/entered_text_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/target_text_view"
+    android:layout_marginLeft="8dp"
+    android:text="@string/init_entered_text_view"
+    android:visibility="invisible"/>
+
+  <Button
+    android:id="@+id/next_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="72dp"
+    android:onClick="nextTrial"
+    android:paddingBottom="16dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="16dp"
+    android:text="@string/next_button"
+    android:visibility="invisible"/>
+
+  <Button
+    android:id="@+id/start_button"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:layout_centerInParent="true"
+    android:background="#888888"
+    android:onClick="startTrials"/>
+
+  <TextView
+    android:id="@+id/finished"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:layout_centerInParent="true"
+    android:background="#888888"
+    android:gravity="center"
+    android:text="You finished!"
+    android:textSize="24sp"
+    android:visibility="invisible"/>
+
+  <TextView
+    android:id="@+id/start_time_text_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@id/start_button"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="48dp"
+    android:text="@string/start_time_msg"/>
+
+  <RelativeLayout
+    android:id="@+id/input_window"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:layout_centerInParent="true"
+    android:background="#888888"
+    android:visibility="invisible">
+
+    <HorizontalScrollView
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:fillViewport="true">
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="q"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="w"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="e"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="r"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="t"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="y"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="u"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="i"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="o"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="p"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:paddingLeft="8dp"
+          android:paddingRight="8dp">
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="a"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="s"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="f"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="g"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="h"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="j"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="k"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="l"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical">
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="z"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="c"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"/>
+
+          <Button
+            style="@style/KeyTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="m"/>
+
+          <ImageButton
+            android:id="@+id/delete_key"
+            style="@style/KeyTheme"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="#FBFBFB"
+            android:onClick="keystroke"
+            android:paddingBottom="2dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/delete"/>
+
+        </LinearLayout>
+
+        <Button
+          style="@style/KeyTheme"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:paddingBottom="6dp"
+          android:paddingLeft="48dp"
+          android:paddingRight="48dp"
+          android:paddingTop="6dp"
+          android:text=" "/>
+
+      </LinearLayout>
+
+    </HorizontalScrollView>
+
+  </RelativeLayout>
+
+  <TextView
+    android:id="@+id/statistics_header"
+    style="@style/StatTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/input_window"
+    android:layout_marginLeft="48dp"
+    android:text="Statistics"
+    android:visibility="invisible"/>
+
+  <TextView
+    android:id="@+id/stat_line1"
+    style="@style/StatTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/statistics_header"
+    android:text=" "/>
+
+  <TextView
+    android:id="@+id/stat_line2"
+    style="@style/StatTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/stat_line1"
+    android:text=" "/>
+
+  <TextView
+    android:id="@+id/stat_line3"
+    style="@style/StatTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/stat_line2"
+    android:text=" "/>
+
+  <TextView
+    android:id="@+id/stat_line4"
+    style="@style/StatTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/stat_line3"
+    android:text=" "/>
+
+  <TextView
+    android:id="@+id/stat_line5"
+    style="@style/StatTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/stat_line4"
+    android:text=" "/>
+
+  <TextView
+    android:id="@+id/stat_line6"
+    style="@style/StatTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/stat_line5"
+    android:text=" "/>
+
+  <TextView
+    android:id="@+id/stat_line7"
+    style="@style/StatTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/stat_line6"
+    android:text=" "/>
+
+  <TextView
+    android:id="@+id/stat_line8"
+    style="@style/StatTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/stat_line7"
+    android:text=" "/>
+
+
+</RelativeLayout>
