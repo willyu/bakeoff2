@@ -80,9 +80,42 @@
     android:background="#888888"
     android:visibility="invisible">
 
+    <LinearLayout
+      android:id="@+id/suggest_bar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <Button
+        android:id="@+id/suggest_button1"
+        style="@style/SuggestTheme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="example"/>
+
+      <Button
+        android:id="@+id/suggest_button2"
+        style="@style/SuggestTheme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="example"/>
+
+      <Button
+        android:id="@+id/suggest_button3"
+        style="@style/SuggestTheme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="example"/>
+
+    </LinearLayout>
+
     <HorizontalScrollView
+      android:id="@+id/keyboard"
       android:layout_width="wrap_content"
-      android:layout_height="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/suggest_bar"
       android:fillViewport="true">
 
       <LinearLayout
@@ -267,41 +300,45 @@
             android:layout_height="wrap_content"
             android:text="m"/>
 
-          <ImageButton
-            android:id="@+id/delete_key"
-            style="@style/KeyTheme"
-            android:layout_width="0dp"
-            android:layout_height="32dp"
-            android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:background="#FBFBFB"
-            android:onClick="keystroke"
-            android:paddingBottom="2dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
-            android:paddingTop="2dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/delete"/>
-
         </LinearLayout>
-
-        <Button
-          style="@style/KeyTheme"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center_horizontal"
-          android:paddingBottom="6dp"
-          android:paddingLeft="48dp"
-          android:paddingRight="48dp"
-          android:paddingTop="6dp"
-          android:text=" "/>
 
       </LinearLayout>
 
     </HorizontalScrollView>
 
-  </RelativeLayout>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/keyboard">
 
+      <Button
+        style="@style/KeyTheme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="3"
+        android:text=" "/>
+
+      <ImageButton
+        android:id="@+id/delete_key"
+        style="@style/KeyTheme"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:adjustViewBounds="true"
+        android:onClick="keystroke"
+        android:paddingBottom="2dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/delete"/>
+
+    </LinearLayout>
+
+  </RelativeLayout>
+z
   <TextView
     android:id="@+id/statistics_header"
     style="@style/StatTheme"
