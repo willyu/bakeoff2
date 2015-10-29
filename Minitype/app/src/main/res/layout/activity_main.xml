@@ -101,6 +101,7 @@
         android:layout_weight="1"
         android:text="example"/>
 
+      <!--Removed third tab for suggestions-->
       <!--<Button-->
       <!--android:id="@+id/suggest_button3"-->
       <!--style="@style/SuggestTheme"-->
@@ -318,6 +319,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="3"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         android:text=" "/>
 
       <ImageButton

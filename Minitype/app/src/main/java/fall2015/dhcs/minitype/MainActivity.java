@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
   Map<String, List<String>> wordMap = new HashMap<>();
 
   // Change this in order to change the total number of trials
-  int totalTrialNum = 3;
+  int totalTrialNum = 2;
   int currTrialNum = 0;
   float totalErrors = 0.0f;
   int totalEntered = 0;
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     loadWords();
 
     // Comment out this line in order to get the same phrases each time (for testing purposes)
-    Collections.shuffle(phrases);
+//    Collections.shuffle(phrases);
     currTarget = phrases.get(currTrialNum);
 
   }
@@ -235,6 +235,14 @@ public class MainActivity extends AppCompatActivity {
   private void updateSuggestions() {
     List<String> suggestions;
     String last = getLastWord();
+
+    if (last == "") {
+      Button suggestButton = (Button) findViewById(R.id.suggest_button1);
+      suggestButton.setText("");
+
+      suggestButton = (Button) findViewById(R.id.suggest_button2);
+      suggestButton.setText("");
+    }
 
     if (wordMap.containsKey(last)) {
       suggestions = wordMap.get(last);
