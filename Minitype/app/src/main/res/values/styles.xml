@@ -26,12 +26,12 @@
   </style>
 
   <style name="KeyTheme">
-    <item name="android:paddingTop">7dp</item>
-    <item name="android:paddingBottom">7dp</item>
-    <item name="android:paddingLeft">8dp</item>
-    <item name="android:paddingRight">8dp</item>
+    <item name="android:paddingTop">6dp</item>
+    <item name="android:paddingBottom">6dp</item>
+    <item name="android:paddingLeft">10dp</item>
+    <item name="android:paddingRight">10dp</item>
     <item name="android:textAllCaps">false</item>
-    <item name="android:textSize">12sp</item>
+    <item name="android:textSize">14sp</item>
     <item name="android:fontFamily">monospace</item>
     <item name="android:gravity">center</item>
     <item name="android:background">@drawable/shape</item>
@@ -43,12 +43,13 @@
     <item name="android:lines">1</item>
     <item name="android:ellipsize">end</item>
     <item name="android:scrollHorizontally">true</item>
-    <item name="android:paddingTop">1dp</item>
-    <item name="android:paddingBottom">1dp</item>
+    <item name="android:paddingTop">4dp</item>
+    <item name="android:paddingBottom">4dp</item>
     <item name="android:paddingLeft">0dp</item>
     <item name="android:paddingRight">0dp</item>
+    <item name="android:textColor">#FFFFFF</item>
     <item name="android:textAllCaps">false</item>
-    <item name="android:textSize">12sp</item>
+    <item name="android:textSize">10sp</item>
     <item name="android:gravity">center</item>
     <item name="android:background">@drawable/shape</item>
     <item name="android:layout_weight">1</item>
@@ -58,7 +59,7 @@
   <style name="StatTheme">
     <item name="android:padding">2dp</item>
     <item name="android:layout_marginLeft">48dp</item>
-    <item name="android:textSize">6sp</item>
+    <item name="android:textSize">14sp</item>
   </style>
 
 </resources>

@@ -51,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    // Loading phrases should be nearly instantaneous, but loading words takes
+    // upwards of 30 seconds
+    //TODO: caching information somehow. Not sure. (split into letters?)
     loadPhrases();
     loadWords();
 
@@ -127,8 +130,8 @@ public class MainActivity extends AppCompatActivity {
     float errors = computeLevenshteinDistance(currEntered.trim(), currTarget.trim());
 
     totalErrors += errors;
-    totalEntered += currEntered.length();
-    totalExpected += currTarget.length();
+    totalEntered += currEntered.trim().length();
+    totalExpected += currTarget.trim().length();
 
     trialFinish = System.currentTimeMillis();
 
@@ -182,13 +185,17 @@ public class MainActivity extends AppCompatActivity {
     BufferedReader buffReader = new BufferedReader(inputReader);
 
     String line;
+    int count = 0;
 
+    long start = System.currentTimeMillis();
+    Log.i("MainActivity", "Starting to load words!");
     try {
       while ((line = buffReader.readLine()) != null) {
+        count++;
         String[] parsed = line.split("\\s+");
         String word = parsed[0];
 
-        for (int i = 1; i < min(word.length(), 6); i++) {
+        for (int i = 1; i < min(word.length(), 7); i++) {
           if (wordMap.get(word.subSequence(0, i)) != null) {
             if (wordMap.get(word.subSequence(0, i)).size() < 3) {
               List<String> temp = wordMap.get(word.subSequence(0, i));
@@ -207,6 +214,9 @@ public class MainActivity extends AppCompatActivity {
       buffReader.close();
       inputReader.close();
       raw.close();
+
+      Log.i("MainActivity", "Loaded " + count + " words to the word map.");
+      Log.i("MainActivity", "Time taken: " + (System.currentTimeMillis() - start) + " milliseconds");
 
     } catch (Exception e) {
       e.printStackTrace();
@@ -241,13 +251,31 @@ public class MainActivity extends AppCompatActivity {
     suggestButton = (Button) findViewById(R.id.suggest_button1);
     suggestButton.setText(suggestion);
 
-    suggestion = suggestions.get(1);
-    suggestButton = (Button) findViewById(R.id.suggest_button2);
-    suggestButton.setText(suggestion);
+    // inelegant, but shouldn't be an issue
+    if (suggestions.size() == 1) {
+      suggestButton = (Button) findViewById(R.id.suggest_button2);
+      suggestButton.setText(suggestion);
 
-    suggestion = suggestions.get(2);
-    suggestButton = (Button) findViewById(R.id.suggest_button3);
-    suggestButton.setText(suggestion);
+      suggestButton = (Button) findViewById(R.id.suggest_button3);
+      suggestButton.setText(suggestion);
+
+    } else if (suggestions.size() == 2) {
+      suggestion = suggestions.get(1);
+      suggestButton = (Button) findViewById(R.id.suggest_button2);
+      suggestButton.setText(suggestion);
+
+      suggestButton = (Button) findViewById(R.id.suggest_button3);
+      suggestButton.setText(suggestion);
+
+    } else {
+      suggestion = suggestions.get(1);
+      suggestButton = (Button) findViewById(R.id.suggest_button2);
+      suggestButton.setText(suggestion);
+
+      suggestion = suggestions.get(2);
+      suggestButton = (Button) findViewById(R.id.suggest_button3);
+      suggestButton.setText(suggestion);
+    }
   }
 
   private String getLastWord() {
