@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
   Map<String, List<String>> wordMap = new HashMap<>();
 
   // Change this in order to change the total number of trials
-  int totalTrialNum = 5;
+  int totalTrialNum = 3;
   int currTrialNum = 0;
   float totalErrors = 0.0f;
   int totalEntered = 0;
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
     String text;
 
-    if (id == R.id.suggest_button1 || id == R.id.suggest_button2 || id == R.id.suggest_button3) {
+    if (id == R.id.suggest_button1 || id == R.id.suggest_button2) {// || id == R.id.suggest_button3) {
 
       text = (String) ((TextView) findViewById(id)).getText();
       String lastWord = getLastWord();
@@ -256,25 +256,25 @@ public class MainActivity extends AppCompatActivity {
       suggestButton = (Button) findViewById(R.id.suggest_button2);
       suggestButton.setText(suggestion);
 
-      suggestButton = (Button) findViewById(R.id.suggest_button3);
-      suggestButton.setText(suggestion);
-
-    } else if (suggestions.size() == 2) {
-      suggestion = suggestions.get(1);
-      suggestButton = (Button) findViewById(R.id.suggest_button2);
-      suggestButton.setText(suggestion);
-
-      suggestButton = (Button) findViewById(R.id.suggest_button3);
-      suggestButton.setText(suggestion);
+//      suggestButton = (Button) findViewById(R.id.suggest_button3);
+//      suggestButton.setText(suggestion);
 
     } else {
       suggestion = suggestions.get(1);
       suggestButton = (Button) findViewById(R.id.suggest_button2);
       suggestButton.setText(suggestion);
 
-      suggestion = suggestions.get(2);
-      suggestButton = (Button) findViewById(R.id.suggest_button3);
-      suggestButton.setText(suggestion);
+//      suggestButton = (Button) findViewById(R.id.suggest_button3);
+//      suggestButton.setText(suggestion);
+
+//    } else {
+//      suggestion = suggestions.get(1);
+//      suggestButton = (Button) findViewById(R.id.suggest_button2);
+//      suggestButton.setText(suggestion);
+
+//      suggestion = suggestions.get(2);
+//      suggestButton = (Button) findViewById(R.id.suggest_button3);
+//      suggestButton.setText(suggestion);
     }
   }
 

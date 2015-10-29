@@ -101,13 +101,13 @@
         android:layout_weight="1"
         android:text="example"/>
 
-      <Button
-        android:id="@+id/suggest_button3"
-        style="@style/SuggestTheme"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="example"/>
+      <!--<Button-->
+      <!--android:id="@+id/suggest_button3"-->
+      <!--style="@style/SuggestTheme"-->
+      <!--android:layout_width="0dp"-->
+      <!--android:layout_height="wrap_content"-->
+      <!--android:layout_weight="1"-->
+      <!--android:text="example"/>-->
 
     </LinearLayout>
 
@@ -116,7 +116,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_below="@id/suggest_bar"
-      android:layout_marginTop="4dp"
+      android:layout_marginTop="1dp"
       android:fillViewport="true">
 
       <LinearLayout
@@ -326,7 +326,7 @@
         android:layout_width="0dp"
         android:layout_height="24dp"
         android:layout_gravity="center"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:adjustViewBounds="true"
         android:onClick="keystroke"
         android:paddingBottom="2dp"
